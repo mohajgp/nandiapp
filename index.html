@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Nandi Business Awards 2026 — Recognizing and awarding the best businesses of 2025. Hosted by KNCCI Nandi Chapter."/>
+  <meta name="theme-color" content="#0B6B3A"/>
+  <title>Nandi Business Awards 2026 | KNCCI Nandi Chapter</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--green:#0B6B3A;--green-dark:#064D29;--green-light:#E8F5EE;--red:#C8102E;--black:#1A1A1A;--g700:#555;--g500:#888;--g300:#CCC;--g200:#E5E5E5;--g100:#F5F5F3;--white:#FFF;--gold:#C19A3E;--ff-d:'DM Serif Display',Georgia,serif;--ff-b:'DM Sans',-apple-system,sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--ff-b);font-size:16px;line-height:1.6;color:var(--black);background:var(--white)}
+    img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{cursor:pointer;font:inherit;border:none;background:none}input,select,textarea{font:inherit}
+    .ctr{max-width:1100px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 24px;font-size:14px;font-weight:600;border-radius:8px;transition:all .2s;border:2px solid transparent}
+    .btn-p{background:var(--green);color:var(--white);border-color:var(--green)}.btn-p:hover{background:var(--green-dark)}
+    .btn-g{background:transparent;color:var(--g700);border-color:var(--g300)}.btn-g:hover{border-color:var(--g700)}
+    .btn-sm{padding:6px 16px;font-size:13px}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--g200)}
+    .nav-i{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .nav-b{display:flex;align-items:center;gap:8px}
+    .nav-logo{width:32px;height:32px;background:var(--green);color:var(--white);font-family:var(--ff-d);font-size:11px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+    .nav-t{font-size:11px;line-height:1.2;color:var(--g700)}.nav-t strong{color:var(--green)}
+    .nav-l{display:flex;gap:20px}.nav-l a{font-size:13px;font-weight:500;color:var(--g700)}.nav-l a:hover{color:var(--green)}
+    @media(max-width:600px){.nav-l{display:none}}
+
+    .hero{padding:80px 0 40px;background:linear-gradient(135deg,#064D29,#0B6B3A 50%,#1a1a1a);color:var(--white);text-align:center}
+    .hero-badge{display:inline-block;padding:4px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50px;font-size:10px;font-weight:600;margin-bottom:12px}
+    .hero-h{font-family:var(--ff-d);font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;margin-bottom:6px}
+    .hero-yr{color:var(--gold);font-size:.5em;display:block}
+    .hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+    .cd{display:flex;justify-content:center;gap:8px;margin-bottom:12px}
+    .cd-b{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 12px;min-width:50px;text-align:center}
+    .cd-n{font-family:var(--ff-d);font-size:18px}.cd-l{font-size:8px;text-transform:uppercase;opacity:.7}
+    .hero-dt{font-size:12px;opacity:.9}
+
+    .qa{padding:0;margin-top:-24px;position:relative;z-index:10}
+    .qa-g{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .qa-c{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+    .qa-ic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+    .qa-b h3{font-size:13px;margin-bottom:2px}.qa-b p{font-size:11px;color:var(--g700);line-height:1.3}
+    @media(max-width:700px){.qa-g{grid-template-columns:1fr}}
+
+    .sec{padding:50px 0}.sec-a{background:var(--g100)}
+    .sec-h{text-align:center;max-width:500px;margin:0 auto 28px}
+    .sec-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);background:var(--green-light);padding:3px 10px;border-radius:50px;margin-bottom:8px}
+    .sec-h h2{font-family:var(--ff-d);font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:6px}
+    .sec-h p{color:var(--g700);font-size:13px}
+
+    .form-wrap{display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:start}
+    @media(max-width:700px){.form-wrap{grid-template-columns:1fr}}
+    .frm{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:20px}
+    .fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    @media(max-width:500px){.fr{grid-template-columns:1fr}}
+    .ff label{display:block;font-size:11px;font-weight:600;margin-bottom:3px}.req{color:var(--red)}
+    .ff input,.ff select,.ff textarea{width:100%;padding:8px 10px;border:1px solid var(--g300);border-radius:6px;font-size:13px}
+    .ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--green)}
+    .ff textarea{resize:vertical;min-height:60px}
+    .ferr{font-size:10px;color:var(--red);min-height:14px}
+
+    .ps{background:var(--green-light);border:1px solid var(--green);border-radius:12px;padding:16px;position:sticky;top:70px}
+    .ps h3{font-size:13px;color:var(--green-dark);margin-bottom:10px}
+    .pd{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(11,107,58,.12);font-size:12px}
+    .pd:last-child{border:none}.pd-l{color:var(--g700)}.pd-v{font-weight:600}
+
+    .vpc{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:24px;text-align:center;max-width:360px;margin:0 auto}
+    .vpc h3{font-size:16px;margin-bottom:4px}.vpc p{font-size:12px;color:var(--g700);margin-bottom:12px}
+    .vpi{display:flex;gap:6px}.vpi input{flex:1;padding:8px 10px;border:1px solid var(--g300);border-radius:6px;font-size:13px}
+    .vinfo{background:var(--green-light);padding:8px 14px;border-radius:6px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+    .fb{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+    .fi{flex:1;min-width:160px;padding:8px 10px;border:1px solid var(--g300);border-radius:6px;font-size:12px}
+    .chips{display:flex;gap:4px;flex-wrap:wrap}
+    .chip{padding:4px 10px;font-size:11px;font-weight:600;border-radius:50px;border:1px solid var(--g300);background:var(--white);color:var(--g700)}
+    .chip:hover{border-color:var(--green);color:var(--green)}.chip-a{background:var(--green);border-color:var(--green);color:var(--white)}
+    .ng{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .nc{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:14px}.nc:hover{border-color:var(--green)}
+    .nc-t{display:flex;justify-content:space-between;align-items:start;gap:6px;margin-bottom:3px}
+    .nc-n{font-weight:700;font-size:13px}
+    .nc-tg{font-size:8px;font-weight:600;text-transform:uppercase;padding:2px 6px;border-radius:50px;background:var(--green-light);color:var(--green)}
+    .nc-cat{font-size:11px;color:var(--g700);margin-bottom:8px}
+    .nc-v{font-size:10px;color:var(--green);font-weight:600}
+    .empty{text-align:center;padding:24px;color:var(--g500);font-size:12px}
+
+    .cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+    .cc{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:14px}.cc:hover{border-color:var(--green)}
+    .cc-t{display:flex;justify-content:space-between;align-items:start;gap:6px;margin-bottom:4px}
+    .cc-n{font-weight:700;font-size:13px}
+    .cc-tg{font-size:8px;font-weight:600;text-transform:uppercase;padding:2px 6px;border-radius:50px;background:var(--green-light);color:var(--green)}
+    .cc-d{font-size:11px;color:var(--g700);line-height:1.4}
+
+    .cog{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .coc{display:flex;align-items:center;gap:8px;padding:12px;background:var(--white);border:1px solid var(--g200);border-radius:8px;font-size:12px;font-weight:500}.coc:hover{border-color:var(--green)}
+    @media(max-width:600px){.cog{grid-template-columns:1fr}}
+
+    .ft{background:var(--green-dark);color:rgba(255,255,255,.8);padding:20px 0;font-size:12px}
+    .ft-i{display:flex;justify-content:space-between;align-items:center}
+    .ft-b{font-family:var(--ff-d);font-size:14px;color:var(--white)}
+
+    .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--black);color:var(--white);padding:8px 20px;border-radius:6px;font-size:12px;font-weight:500;z-index:200}
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="ctr nav-i">
+      <a href="#" class="nav-b">
+        <span class="nav-logo">NBA</span>
+        <span class="nav-t">Nandi Business Awards <strong>2026</strong></span>
+      </a>
+      <div class="nav-l">
+        <a href="#nominate">Nominate</a>
+        <a href="#vote">Vote</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="ctr">
+      <div class="hero-badge">KNCCI · Nandi Chapter</div>
+      <h1 class="hero-h">Nandi Business Awards<span class="hero-yr">2026</span></h1>
+      <p class="hero-sub">Recognizing the best businesses of 2025</p>
+      <div class="cd">
+        <div class="cd-b"><div class="cd-n" id="cdD">--</div><div class="cd-l">Days</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdH">--</div><div class="cd-l">Hrs</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdM">--</div><div class="cd-l">Min</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdS">--</div><div class="cd-l">Sec</div></div>
+      </div>
+      <div class="hero-dt">📅 Awards: <strong>27 March 2026</strong></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="qa">
+      <div class="ctr">
+        <div class="qa-g">
+          <div class="qa-c">
+            <div class="qa-ic" style="background:#E8F5EE;color:#0B6B3A"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 1,000</strong> Members<br/><strong>KES 2,000</strong> Non-Members</p></div>
+            <a href="#nominate" class="btn btn-p btn-sm">Nominate</a>
+          </div>
+          <div class="qa-c">
+            <div class="qa-ic" style="background:#FFF3E0;color:#E65100"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="qa-b"><h3>Vote Now</h3><p>Support your favourite<br/>Nandi businesses</p></div>
+            <a href="#vote" class="btn btn-p btn-sm">Vote</a>
+          </div>
+          <div class="qa-c">
+            <div class="qa-ic" style="background:#E3F2FD;color:#1565C0"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="qa-b"><h3>Payment</h3><p>Paybill: <strong>303030</strong><br/>Acc: <strong>2041058148</strong></p></div>
+            <button class="btn btn-g btn-sm" onclick="navigator.clipboard.writeText('303030').then(()=>toast('Copied!'))">Copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="nominate">
+      <div class="ctr">
+        <div class="sec-h"><span class="sec-tag">Nominate</span><h2>Nominate a Business</h2><p>Pay first, then fill the form</p></div>
+        <div class="form-wrap">
+          <form id="nomForm" class="frm" novalidate>
+            <div class="fr">
+              <div class="ff"><label>Business Name <span class="req">*</span></label><input type="text" id="businessName" required placeholder="e.g., Kapsabet Hardware"/><div class="ferr" data-e="businessName"></div></div>
+              <div class="ff"><label>Category <span class="req">*</span></label><select id="category" required></select><div class="ferr" data-e="category"></div></div>
+            </div>
+            <div class="fr">
+              <div class="ff"><label>Owner Name <span class="req">*</span></label><input type="text" id="ownerName" required placeholder="e.g., Jane Chebet"/><div class="ferr" data-e="ownerName"></div></div>
+              <div class="ff"><label>Phone <span class="req">*</span></label><input type="tel" id="phone" required placeholder="0712345678"/><div class="ferr" data-e="phone"></div></div>
+            </div>
+            <div class="fr">
+              <div class="ff"><label>Email</label><input type="email" id="email" placeholder="Optional"/><div class="ferr" data-e="email"></div></div>
+              <div class="ff"><label>Location</label><input type="text" id="location" placeholder="e.g., Kapsabet"/></div>
+            </div>
+            <div class="fr">
+              <div class="ff"><label>KNCCI Status <span class="req">*</span></label><select id="membership" required><option value="">Select...</option><option value="member">Member (KES 1,000)</option><option value="non-member">Non-member (KES 2,000)</option></select><div class="ferr" data-e="membership"></div></div>
+              <div class="ff"><label>M-Pesa Code <span class="req">*</span></label><input type="text" id="mpesaRef" required placeholder="e.g., SLK4H7R2T1"/><div class="ferr" data-e="mpesaRef"></div></div>
+            </div>
+            <div class="ff"><label>Why should they win? <span class="req">*</span></label><textarea id="why" required placeholder="Performance, service, innovation..."></textarea><div class="ferr" data-e="why"></div></div>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <button type="submit" class="btn btn-p" id="nomBtn">Submit</button>
+              <button type="reset" class="btn btn-g">Clear</button>
+            </div>
+          </form>
+          <aside class="ps">
+            <h3>💳 Pay First</h3>
+            <div class="pd"><span class="pd-l">Paybill</span><span class="pd-v">303030</span></div>
+            <div class="pd"><span class="pd-l">Account</span><span class="pd-v">2041058148</span></div>
+            <div class="pd"><span class="pd-l">Members</span><span class="pd-v">KES 1,000</span></div>
+            <div class="pd"><span class="pd-l">Non-Members</span><span class="pd-v">KES 2,000</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec-a" id="vote">
+      <div class="ctr">
+        <div class="sec-h"><span class="sec-tag">Vote</span><h2>Vote for Your Favourite</h2><p>One vote per phone per category</p></div>
+        <div id="vPhoneStep">
+          <div class="vpc">
+            <h3>Enter phone to vote</h3>
+            <p>One vote per phone per category</p>
+            <div class="vpi"><input type="tel" id="voterPhone" placeholder="0712345678"/><button class="btn btn-p" id="voterBtn">Go</button></div>
+            <div class="ferr" id="vPhoneErr" style="text-align:center;margin-top:4px"></div>
+          </div>
+        </div>
+        <div id="vGridStep" hidden>
+          <div class="vinfo"><span>Voting as: <strong id="vDisplay"></strong></span><button class="btn btn-g btn-sm" id="changeVoter">Change</button></div>
+          <div class="fb">
+            <input type="search" id="voteSearch" class="fi" placeholder="Search..."/>
+            <div class="chips" id="voteChips">
+              <button class="chip chip-a" data-vf="all">All</button>
+              <button class="chip" data-vf="sme">SME</button>
+              <button class="chip" data-vf="sector">Sector</button>
+              <button class="chip" data-vf="impact">Impact</button>
+              <button class="chip" data-vf="special">Special</button>
+            </div>
+          </div>
+          <div class="ng" id="nomGrid"><div class="empty">Loading...</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="categories">
+      <div class="ctr">
+        <div class="sec-h"><span class="sec-tag">Categories</span><h2>14 Award Categories</h2></div>
+        <div class="fb">
+          <input type="search" id="catSearch" class="fi" placeholder="Search..."/>
+          <div class="chips" id="catChips">
+            <button class="chip chip-a" data-f="all">All</button>
+            <button class="chip" data-f="sme">SME</button>
+            <button class="chip" data-f="sector">Sector</button>
+            <button class="chip" data-f="impact">Impact</button>
+            <button class="chip" data-f="special">Special</button>
+          </div>
+        </div>
+        <div class="cg" id="catGrid"></div>
+      </div>
+    </section>
+
+    <section class="sec sec-a" id="contact">
+      <div class="ctr">
+        <div class="sec-h"><span class="sec-tag">Contact</span><h2>Get in Touch</h2></div>
+        <div class="cog">
+          <a href="tel:+254726115766" class="coc">📞 0726 115 766</a>
+          <a href="tel:+254707799684" class="coc">📞 0707 799 684</a>
+          <a href="mailto:nandi@kenyachamber.or.ke" class="coc">✉️ nandi@kenyachamber.or.ke</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ft">
+    <div class="ctr ft-i">
+      <span class="ft-b">Nandi Business Awards 2026</span>
+      <span>© KNCCI Nandi Chapter</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script>
+    const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+    const GURL='https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
+
+    const CATS=[
+      {id:'sme-excellence',name:'SME of the Year',tag:'sme',desc:'Outstanding SME performance and growth.'},
+      {id:'micro-excellence',name:'Micro Enterprise Award',tag:'sme',desc:'Best micro enterprise.'},
+      {id:'startup-innovation',name:'Startup & Innovation',tag:'impact',desc:'High-potential startup.'},
+      {id:'women-led',name:'Women-led Business',tag:'impact',desc:'Excellence in women-led enterprises.'},
+      {id:'youth-led',name:'Youth-led Business',tag:'impact',desc:'Youth-led enterprise excellence.'},
+      {id:'agribusiness',name:'Agribusiness Award',tag:'sector',desc:'Top farming/agriservices business.'},
+      {id:'manufacturing',name:'Manufacturing & Value Addition',tag:'sector',desc:'Quality production.'},
+      {id:'hospitality',name:'Hospitality & Tourism',tag:'sector',desc:'Best hotel/restaurant/tourism.'},
+      {id:'retail',name:'Retail & Trade',tag:'sector',desc:'Excellence in retail.'},
+      {id:'service',name:'Professional Services',tag:'sector',desc:'Outstanding services.'},
+      {id:'green',name:'Green Business Award',tag:'impact',desc:'Sustainable practices.'},
+      {id:'community',name:'Community Impact',tag:'impact',desc:'Outstanding community contribution.'},
+      {id:'customer',name:'Customer Service Excellence',tag:'special',desc:'Exceptional service.'},
+      {id:'lifetime',name:'Lifetime Achievement',tag:'special',desc:'Long-standing excellence.'}
+    ];
+
+    const toastEl=$('#toast');let tt;
+    function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,2500)}
+
+    const T=new Date('2026-03-27T18:00:00+03:00'),p=n=>String(n).padStart(2,'0');
+    function tick(){const d=Math.max(0,T-Date.now()),t=Math.floor(d/1000);$('#cdD').textContent=Math.floor(t/86400);$('#cdH').textContent=p(Math.floor(t%86400/3600));$('#cdM').textContent=p(Math.floor(t%3600/60));$('#cdS').textContent=p(t%60)}
+    tick();setInterval(tick,1000);
+
+    const cSel=$('#category');
+    cSel.innerHTML='<option value="">Select...</option>'+CATS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+    function renderCats(list){$('#catGrid').innerHTML=list.map(c=>`<div class="cc"><div class="cc-t"><div class="cc-n">${c.name}</div><div class="cc-tg">${c.tag}</div></div><div class="cc-d">${c.desc}</div></div>`).join('')}
+    renderCats(CATS);
+    let cf='all';
+    function filterCats(){const q=$('#catSearch').value.toLowerCase();renderCats(CATS.filter(c=>(cf==='all'||c.tag===cf)&&(!q||c.name.toLowerCase().includes(q))))}
+    $('#catSearch').addEventListener('input',filterCats);
+    $$('#catChips .chip').forEach(b=>b.addEventListener('click',()=>{$$('#catChips .chip').forEach(x=>x.classList.remove('chip-a'));b.classList.add('chip-a');cf=b.dataset.f;filterCats()}));
+
+    const vPhone=v=>/^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(v.replace(/\s/g,''));
+    function setE(n,m){const e=$(`[data-e="${n}"]`);if(e)e.textContent=m||''}
+    function clrE(){['businessName','category','ownerName','phone','email','membership','mpesaRef','why'].forEach(k=>setE(k,''))}
+
+    $('#nomForm').addEventListener('submit',async e=>{
+      e.preventDefault();clrE();
+      const d={businessName:$('#businessName').value.trim(),category:$('#category').value,ownerName:$('#ownerName').value.trim(),phone:$('#phone').value.trim(),email:$('#email').value.trim(),location:$('#location').value.trim(),membership:$('#membership').value,mpesaRef:$('#mpesaRef').value.trim(),why:$('#why').value.trim()};
+      let ok=true;
+      if(d.businessName.length<2){setE('businessName','Required');ok=false}
+      if(!d.category){setE('category','Required');ok=false}
+      if(d.ownerName.length<2){setE('ownerName','Required');ok=false}
+      if(!vPhone(d.phone)){setE('phone','Invalid');ok=false}
+      if(!d.membership){setE('membership','Required');ok=false}
+      if(d.mpesaRef.length<6){setE('mpesaRef','Min 6');ok=false}
+      if(d.why.length<20){setE('why','Min 20 chars');ok=false}
+      if(!ok)return;
+      const cat=CATS.find(c=>c.id===d.category);
+      d.categoryName=cat?cat.name:d.category;
+      d.id='NBA-'+Math.random().toString(36).slice(2,8).toUpperCase();
+      $('#nomBtn').disabled=true;$('#nomBtn').textContent='...';
+      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'nominate',...d})});$('#nomForm').reset();cSel.value='';clrE();toast('✓ Submitted!')}catch{toast('Error')}
+      $('#nomBtn').disabled=false;$('#nomBtn').textContent='Submit';
+    });
+
+    let vPhone2='',noms=[];
+    const VK='nba_votes_v1';
+    function ldVotes(){try{return JSON.parse(localStorage.getItem(VK)||'{}')}catch{return{}}}
+    function svVote(ph,nid,cat){const v=ldVotes();v[`${ph}__${cat}`]=nid;localStorage.setItem(VK,JSON.stringify(v))}
+    function hasVoted(ph,cat){return!!ldVotes()[`${ph}__${cat}`]}
+
+    async function loadNoms(){
+      $('#nomGrid').innerHTML='<div class="empty">Loading...</div>';
+      try{const r=await fetch(GURL);noms=await r.json();if(!noms.length)$('#nomGrid').innerHTML='<div class="empty">No approved nominees yet.</div>'}
+      catch{$('#nomGrid').innerHTML='<div class="empty">Error loading.</div>'}
+    }
+
+    $('#voterBtn').addEventListener('click',async()=>{
+      const v=$('#voterPhone').value.trim();
+      if(!vPhone(v)){$('#vPhoneErr').textContent='Invalid';return}
+      vPhone2=v.replace(/\s/g,'');$('#vDisplay').textContent=vPhone2;
+      $('#vPhoneStep').hidden=true;$('#vGridStep').hidden=false;
+      await loadNoms();renderNoms();
+    });
+    $('#voterPhone').addEventListener('keydown',e=>{if(e.key==='Enter')$('#voterBtn').click()});
+    $('#changeVoter').addEventListener('click',()=>{vPhone2='';$('#vPhoneStep').hidden=false;$('#vGridStep').hidden=true;$('#voterPhone').value=''});
+
+    let vf='all';
+    function renderNoms(){
+      if(!noms.length)return;
+      const q=$('#voteSearch').value.toLowerCase();
+      const list=noms.filter(n=>(vf==='all'||n.tag===vf)&&(!q||n.name.toLowerCase().includes(q)||n.category.toLowerCase().includes(q)));
+      $('#nomGrid').innerHTML=list.length?list.map(n=>`<div class="nc"><div class="nc-t"><div class="nc-n">${n.name}</div><div class="nc-tg">${n.tag}</div></div><div class="nc-cat">${n.category}</div>${hasVoted(vPhone2,n.category)?'<div class="nc-v">✓ Voted</div>':`<button class="btn btn-p btn-sm" onclick="castVote('${n.id}','${n.category}')">Vote</button>`}</div>`).join(''):'<div class="empty">No matches</div>';
+    }
+
+    async function castVote(nid,cat){
+      if(hasVoted(vPhone2,cat)){toast('Already voted');return}
+      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'vote',phone:vPhone2,nomineeId:nid,category:cat})})}catch{}
+      svVote(vPhone2,nid,cat);toast('✓ Vote recorded!');renderNoms();
+    }
+
+    $('#voteSearch').addEventListener('input',renderNoms);
+    $$('#voteChips .chip').forEach(b=>b.addEventListener('click',()=>{$$('#voteChips .chip').forEach(x=>x.classList.remove('chip-a'));b.classList.add('chip-a');vf=b.dataset.vf;renderNoms()}));
+  </script>
+</body>
+</html>
