@@ -6,7 +6,6 @@
   <meta name="description" content="Nandi Business Awards 2026 — Recognizing and awarding the best businesses of 2025. Hosted by KNCCI Nandi Chapter."/>
   <meta name="theme-color" content="#0B6B3A"/>
   <title>Nandi Business Awards 2026 | KNCCI Nandi Chapter</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -107,7 +106,7 @@
 
   <header class="hero">
     <div class="ctr">
-      <div class="hero-badge">KNCCI · Nandi Chapter</div>
+      <div class="hero-badge">KNCCI Nandi Chapter</div>
       <h1 class="hero-h">Nandi Business Awards<span class="hero-yr">2026</span></h1>
       <p class="hero-sub">Recognizing the best businesses of 2025</p>
       <div class="cd">
@@ -116,7 +115,7 @@
         <div class="cd-b"><div class="cd-n" id="cdM">--</div><div class="cd-l">Min</div></div>
         <div class="cd-b"><div class="cd-n" id="cdS">--</div><div class="cd-l">Sec</div></div>
       </div>
-      <div class="hero-dt">📅 Awards: <strong>27 March 2026</strong></div>
+      <div class="hero-dt">Awards: <strong>27 March 2026</strong></div>
     </div>
   </header>
 
@@ -125,14 +124,18 @@
       <div class="ctr">
         <div class="qa-g">
           <div class="qa-c">
-            <div class="qa-ic" style="background:#E8F5EE;color:#0B6B3A"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 2,000</strong> Non-Members</p></div>
+            <div class="qa-ic" style="background:#E8F5EE;color:#0B6B3A">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 2,000</strong></p></div>
             <a href="#nominate" class="btn btn-p btn-sm">Nominate Now</a>
           </div>
           <div class="qa-c">
-            <div class="qa-ic" style="background:#E3F2FD;color:#1565C0"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="qa-ic" style="background:#E3F2FD;color:#1565C0">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+            </div>
             <div class="qa-b"><h3>Payment Details</h3><p>Paybill: <strong>303030</strong><br/>Acc: <strong>2041058148</strong></p></div>
-            <button class="btn btn-g btn-sm" onclick="navigator.clipboard.writeText('303030').then(()=>toast('Paybill copied!'))">Copy Paybill</button>
+            <button class="btn btn-g btn-sm" id="copyBtn">Copy Paybill</button>
           </div>
         </div>
       </div>
@@ -166,10 +169,10 @@
             </div>
           </form>
           <aside class="ps">
-            <h3>💳 Pay First</h3>
+            <h3>Pay First</h3>
             <div class="pd"><span class="pd-l">Paybill</span><span class="pd-v">303030</span></div>
             <div class="pd"><span class="pd-l">Account</span><span class="pd-v">2041058148</span></div>
-            <div class="pd"><span class="pd-l">Non-Members</span><span class="pd-v">KES 2,000</span></div>
+            <div class="pd"><span class="pd-l">Fee</span><span class="pd-v">KES 2,000</span></div>
           </aside>
         </div>
       </div>
@@ -189,9 +192,9 @@
       <div class="ctr">
         <div class="sec-h"><span class="sec-tag">Contact</span><h2>Get in Touch</h2></div>
         <div class="cog">
-          <a href="tel:+254726115766" class="coc">📞 0726 115 766</a>
-          <a href="tel:+254707799684" class="coc">📞 0707 799 684</a>
-          <a href="/cdn-cgi/l/email-protection#a0cec1cec4c9e0cbc5ced9c1c3c8c1cdc2c5d28ecfd28ecbc5" class="coc">✉️ <span class="__cf_email__" data-cfemail="bad4dbd4ded3fad1dfd4c3dbd9d2dbd7d8dfc894d5c894d1df">[email&#160;protected]</span></a>
+          <a href="tel:+254726115766" class="coc">0726 115 766</a>
+          <a href="tel:+254707799684" class="coc">0707 799 684</a>
+          <a href="mailto:nandi@kenyachamber.or.ke" class="coc">nandi@kenyachamber.or.ke</a>
         </div>
       </div>
     </section>
@@ -200,92 +203,188 @@
   <footer class="ft">
     <div class="ctr ft-i">
       <span class="ft-b">Nandi Business Awards 2026</span>
-      <span>© KNCCI Nandi Chapter</span>
+      <span>KNCCI Nandi Chapter</span>
     </div>
   </footer>
 
   <div class="toast" id="toast" hidden></div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-    const GURL='https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
+  <script>
+    (function() {
+      var GURL = 'https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
 
-    const CATS=[
-      {id:'electronic-shop',name:'Best Electronic Shop'},
-      {id:'salon',name:'Best Salon'},
-      {id:'beauty-shop',name:'Best Beauty Shop'},
-      {id:'baby-shop',name:'Best Baby Shop'},
-      {id:'fashion-shop',name:'Best Fashion Shop'},
-      {id:'kinyozi',name:'Best Kinyozi (Barbershop)'},
-      {id:'supermarket',name:'Best Supermarket'},
-      {id:'hotel-medium',name:'Best Hotel (Medium)'},
-      {id:'hotel-large',name:'Best Hotel (Large)'},
-      {id:'hardware',name:'Best Hardware'},
-      {id:'tea-factory',name:'Best Tea Factory'},
-      {id:'sacco',name:'Best SACCO'},
-      {id:'wholesale',name:'Best Wholesale'},
-      {id:'event-organizer',name:'Event Organizer of the Year'},
-      {id:'corporate-mc',name:'Corporate MC'},
-      {id:'private-school',name:'Private School of the Year'},
-      {id:'textile-tailor',name:'Best Textile/Tailor'},
-      {id:'carwash',name:'Carwash of the Year'},
-      {id:'garage',name:'Best Garage'},
-      {id:'private-hospital',name:'Best Private Hospital'},
-      {id:'chemist',name:'Best Chemist'},
-      {id:'agrovet',name:'Best Agrovet'},
-      {id:'petrol-station',name:'Best Petrol Station'},
-      {id:'bookshop',name:'Best Bookshop'},
-      {id:'cyber',name:'Best Cyber'},
-      {id:'cottage-industry',name:'Best Cottage Industry'},
-      {id:'national-polytechnic',name:'Best National Polytechnic'},
-      {id:'tvet-institution',name:'Best TVET Institution'},
-      {id:'bodaboda',name:'Best Bodaboda'},
-      {id:'mama-mboga',name:'Best Mama Mboga'},
-      {id:'workshop-furniture',name:'Best Workshop/Furniture Shop'},
-      {id:'photography-studio',name:'Best Photography/Studio'},
-      {id:'dairy-farmer',name:'Dairy Farmer'},
-      {id:'security-firm',name:'Best Security Firm'}
-    ];
+      var CATS = [
+        {id:'electronic-shop',name:'Best Electronic Shop'},
+        {id:'salon',name:'Best Salon'},
+        {id:'beauty-shop',name:'Best Beauty Shop'},
+        {id:'baby-shop',name:'Best Baby Shop'},
+        {id:'fashion-shop',name:'Best Fashion Shop'},
+        {id:'kinyozi',name:'Best Kinyozi (Barbershop)'},
+        {id:'supermarket',name:'Best Supermarket'},
+        {id:'hotel-medium',name:'Best Hotel (Medium)'},
+        {id:'hotel-large',name:'Best Hotel (Large)'},
+        {id:'hardware',name:'Best Hardware'},
+        {id:'tea-factory',name:'Best Tea Factory'},
+        {id:'sacco',name:'Best SACCO'},
+        {id:'wholesale',name:'Best Wholesale'},
+        {id:'event-organizer',name:'Event Organizer of the Year'},
+        {id:'corporate-mc',name:'Corporate MC'},
+        {id:'private-school',name:'Private School of the Year'},
+        {id:'textile-tailor',name:'Best Textile/Tailor'},
+        {id:'carwash',name:'Carwash of the Year'},
+        {id:'garage',name:'Best Garage'},
+        {id:'private-hospital',name:'Best Private Hospital'},
+        {id:'chemist',name:'Best Chemist'},
+        {id:'agrovet',name:'Best Agrovet'},
+        {id:'petrol-station',name:'Best Petrol Station'},
+        {id:'bookshop',name:'Best Bookshop'},
+        {id:'cyber',name:'Best Cyber'},
+        {id:'cottage-industry',name:'Best Cottage Industry'},
+        {id:'national-polytechnic',name:'Best National Polytechnic'},
+        {id:'tvet-institution',name:'Best TVET Institution'},
+        {id:'bodaboda',name:'Best Bodaboda'},
+        {id:'mama-mboga',name:'Best Mama Mboga'},
+        {id:'workshop-furniture',name:'Best Workshop/Furniture Shop'},
+        {id:'photography-studio',name:'Best Photography/Studio'},
+        {id:'dairy-farmer',name:'Dairy Farmer'},
+        {id:'security-firm',name:'Best Security Firm'}
+      ];
 
-    const toastEl=$('#toast');let tt;
-    function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,2500)}
+      var toastEl = document.getElementById('toast');
+      var tt;
+      function toast(m) {
+        toastEl.textContent = m;
+        toastEl.hidden = false;
+        clearTimeout(tt);
+        tt = setTimeout(function() { toastEl.hidden = true; }, 2500);
+      }
 
-    const T=new Date('2026-03-27T18:00:00+03:00'),p=n=>String(n).padStart(2,'0');
-    function tick(){const d=Math.max(0,T-Date.now()),t=Math.floor(d/1000);$('#cdD').textContent=Math.floor(t/86400);$('#cdH').textContent=p(Math.floor(t%86400/3600));$('#cdM').textContent=p(Math.floor(t%3600/60));$('#cdS').textContent=p(t%60)}
-    tick();setInterval(tick,1000);
+      // Copy button
+      document.getElementById('copyBtn').addEventListener('click', function() {
+        navigator.clipboard.writeText('303030').then(function() {
+          toast('Paybill copied!');
+        });
+      });
 
-    const cSel=$('#category');
-    cSel.innerHTML='<option value="">Select category...</option>'+CATS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
-    
-    function renderCats(list){
-      $('#catGrid').innerHTML=list.map((c,i)=>`<div class="cc"><div class="cc-num">#${i+1}</div><div class="cc-n">${c.name}</div></div>`).join('');
-    }
-    renderCats(CATS);
-    
-    function filterCats(){
-      const q=$('#catSearch').value.toLowerCase();
-      renderCats(CATS.filter(c=>!q||c.name.toLowerCase().includes(q)));
-    }
-    $('#catSearch').addEventListener('input',filterCats);
+      // Countdown timer
+      var T = new Date('2026-03-27T18:00:00+03:00');
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function tick() {
+        var d = Math.max(0, T - Date.now());
+        var t = Math.floor(d / 1000);
+        document.getElementById('cdD').textContent = Math.floor(t / 86400);
+        document.getElementById('cdH').textContent = pad(Math.floor((t % 86400) / 3600));
+        document.getElementById('cdM').textContent = pad(Math.floor((t % 3600) / 60));
+        document.getElementById('cdS').textContent = pad(t % 60);
+      }
+      tick();
+      setInterval(tick, 1000);
 
-    const vPhone=v=>/^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(v.replace(/\s/g,''));
-    function setE(n,m){const e=$(`[data-e="${n}"]`);if(e)e.textContent=m||''}
-    function clrE(){['businessName','category','ownerName','phone','email','membership','mpesaRef','why'].forEach(k=>setE(k,''))}
+      // Populate category dropdown
+      var cSel = document.getElementById('category');
+      var opts = '<option value="">Select category...</option>';
+      for (var i = 0; i < CATS.length; i++) {
+        opts += '<option value="' + CATS[i].id + '">' + CATS[i].name + '</option>';
+      }
+      cSel.innerHTML = opts;
 
-    $('#nomForm').addEventListener('submit',async e=>{
-      e.preventDefault();clrE();
-      const d={businessName:$('#businessName').value.trim(),category:$('#category').value,ownerName:$('#ownerName').value.trim(),phone:$('#phone').value.trim(),email:$('#email').value.trim(),location:$('#location').value.trim(),membership:$('#membership').value,mpesaRef:$('#mpesaRef').value.trim(),why:$('#why').value.trim()};
-      let ok=true;
-      if(d.businessName.length<2){setE('businessName','Required');ok=false}
-      if(!d.category){setE('category','Required');ok=false}
-      if(d.ownerName.length<2){setE('ownerName','Required');ok=false}
-      if(!vPhone(d.phone)){setE('phone','Invalid');ok=false}
-      if(!d.membership){setE('membership','Required');ok=false}
-      if(d.mpesaRef.length<6){setE('mpesaRef','Min 6');ok=false}
-      if(d.why.length<20){setE('why','Min 20 chars');ok=false}
-      if(!ok)return;
-      const cat=CATS.find(c=>c.id===d.category);
-      d.categoryName=cat?cat.name:d.category;
-      d.id='NBA-'+Math.random().toString(36).slice(2,8).toUpperCase();
-      $('#nomBtn').disabled=true;$('#nomBtn').textContent='Submitting...';
-      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({a
+      // Render categories grid
+      function renderCats(list) {
+        var html = '';
+        for (var i = 0; i < list.length; i++) {
+          var idx = CATS.indexOf(list[i]) + 1;
+          html += '<div class="cc"><div class="cc-num">#' + idx + '</div><div class="cc-n">' + list[i].name + '</div></div>';
+        }
+        document.getElementById('catGrid').innerHTML = html;
+      }
+      renderCats(CATS);
+
+      // Filter categories
+      document.getElementById('catSearch').addEventListener('input', function() {
+        var q = this.value.toLowerCase();
+        var filtered = [];
+        for (var i = 0; i < CATS.length; i++) {
+          if (!q || CATS[i].name.toLowerCase().indexOf(q) !== -1) {
+            filtered.push(CATS[i]);
+          }
+        }
+        renderCats(filtered);
+      });
+
+      // Phone validation
+      function vPhone(v) {
+        return /^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(v.replace(/\s/g, ''));
+      }
+
+      // Error display
+      function setE(n, m) {
+        var e = document.querySelector('[data-e="' + n + '"]');
+        if (e) e.textContent = m || '';
+      }
+      function clrE() {
+        var fields = ['businessName','category','ownerName','phone','email','membership','mpesaRef','why'];
+        for (var i = 0; i < fields.length; i++) {
+          setE(fields[i], '');
+        }
+      }
+
+      // Form submission
+      document.getElementById('nomForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        clrE();
+
+        var d = {
+          businessName: document.getElementById('businessName').value.trim(),
+          category: document.getElementById('category').value,
+          ownerName: document.getElementById('ownerName').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          location: document.getElementById('location').value.trim(),
+          membership: document.getElementById('membership').value,
+          mpesaRef: document.getElementById('mpesaRef').value.trim(),
+          why: document.getElementById('why').value.trim()
+        };
+
+        var ok = true;
+        if (d.businessName.length < 2) { setE('businessName', 'Required'); ok = false; }
+        if (!d.category) { setE('category', 'Required'); ok = false; }
+        if (d.ownerName.length < 2) { setE('ownerName', 'Required'); ok = false; }
+        if (!vPhone(d.phone)) { setE('phone', 'Invalid'); ok = false; }
+        if (!d.membership) { setE('membership', 'Required'); ok = false; }
+        if (d.mpesaRef.length < 6) { setE('mpesaRef', 'Min 6'); ok = false; }
+        if (d.why.length < 20) { setE('why', 'Min 20 chars'); ok = false; }
+        if (!ok) return;
+
+        // Find category name
+        for (var i = 0; i < CATS.length; i++) {
+          if (CATS[i].id === d.category) {
+            d.categoryName = CATS[i].name;
+            break;
+          }
+        }
+        d.id = 'NBA-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+
+        var nomBtn = document.getElementById('nomBtn');
+        nomBtn.disabled = true;
+        nomBtn.textContent = 'Submitting...';
+
+        fetch(GURL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify({ action: 'nominate', data: d })
+        }).then(function() {
+          document.getElementById('nomForm').reset();
+          cSel.value = '';
+          clrE();
+          toast('Nomination submitted!');
+        }).catch(function() {
+          toast('Error submitting');
+        }).finally(function() {
+          nomBtn.disabled = false;
+          nomBtn.textContent = 'Submit Nomination';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
