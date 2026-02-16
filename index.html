@@ -126,7 +126,7 @@
         <div class="qa-g">
           <div class="qa-c">
             <div class="qa-ic" style="background:#E8F5EE;color:#0B6B3A"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 1,000</strong> <br/><strong></strong> Non-Members</p></div>
+            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 2,000</strong> Non-Members</p></div>
             <a href="#nominate" class="btn btn-p btn-sm">Nominate Now</a>
           </div>
           <div class="qa-c">
@@ -156,7 +156,7 @@
               <div class="ff"><label>Location</label><input type="text" id="location" placeholder="e.g., Kapsabet"/></div>
             </div>
             <div class="fr">
-              <div class="ff"><label>KNCCI Status <span class="req">*</span></label><select id="membership" required><option value="">Select...</option><option value="member">Member (KES 1,000)</option><option value="non-member">Non-member (KES 2,000)</option></select><div class="ferr" data-e="membership"></div></div>
+              <div class="ff"><label>KNCCI Status <span class="req">*</span></label><select id="membership" required><option value="">Select...</option><option value="non-member">Non-member (KES 2,000)</option></select><div class="ferr" data-e="membership"></div></div>
               <div class="ff"><label>M-Pesa Code <span class="req">*</span></label><input type="text" id="mpesaRef" required placeholder="e.g., SLK4H7R2T1"/><div class="ferr" data-e="mpesaRef"></div></div>
             </div>
             <div class="ff"><label>Why should they win? <span class="req">*</span></label><textarea id="why" required placeholder="Performance, service, innovation..."></textarea><div class="ferr" data-e="why"></div></div>
@@ -169,7 +169,6 @@
             <h3>💳 Pay First</h3>
             <div class="pd"><span class="pd-l">Paybill</span><span class="pd-v">303030</span></div>
             <div class="pd"><span class="pd-l">Account</span><span class="pd-v">2041058148</span></div>
-            <div class="pd"><span class="pd-l">Members</span><span class="pd-v">KES 1,000</span></div>
             <div class="pd"><span class="pd-l">Non-Members</span><span class="pd-v">KES 2,000</span></div>
           </aside>
         </div>
@@ -192,7 +191,7 @@
         <div class="cog">
           <a href="tel:+254726115766" class="coc">📞 0726 115 766</a>
           <a href="tel:+254707799684" class="coc">📞 0707 799 684</a>
-          <a href="mailto:nandi@kenyachamber.or.ke" class="coc">✉️ nandi@kenyachamber.or.ke</a>
+          <a href="/cdn-cgi/l/email-protection#a0cec1cec4c9e0cbc5ced9c1c3c8c1cdc2c5d28ecfd28ecbc5" class="coc">✉️ <span class="__cf_email__" data-cfemail="bad4dbd4ded3fad1dfd4c3dbd9d2dbd7d8dfc894d5c894d1df">[email&#160;protected]</span></a>
         </div>
       </div>
     </section>
@@ -207,7 +206,7 @@
 
   <div class="toast" id="toast" hidden></div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
     const GURL='https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
 
@@ -289,9 +288,4 @@
       d.categoryName=cat?cat.name:d.category;
       d.id='NBA-'+Math.random().toString(36).slice(2,8).toUpperCase();
       $('#nomBtn').disabled=true;$('#nomBtn').textContent='Submitting...';
-      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'nominate',...d})});$('#nomForm').reset();cSel.value='';clrE();toast('✓ Nomination submitted!')}catch{toast('Error submitting')}
-      $('#nomBtn').disabled=false;$('#nomBtn').textContent='Submit Nomination';
-    });
-  </script>
-</body>
-</html>
+      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({a
