@@ -110,10 +110,10 @@
       <h1 class="hero-h">Nandi Business Awards<span class="hero-yr">2026</span></h1>
       <p class="hero-sub">Recognizing the best businesses of 2025</p>
       <div class="cd">
-        <div class="cd-b"><div class="cd-n" id="cdD">--</div><div class="cd-l">Days</div></div>
-        <div class="cd-b"><div class="cd-n" id="cdH">--</div><div class="cd-l">Hrs</div></div>
-        <div class="cd-b"><div class="cd-n" id="cdM">--</div><div class="cd-l">Min</div></div>
-        <div class="cd-b"><div class="cd-n" id="cdS">--</div><div class="cd-l">Sec</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdD">0</div><div class="cd-l">Days</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdH">0</div><div class="cd-l">Hrs</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdM">0</div><div class="cd-l">Min</div></div>
+        <div class="cd-b"><div class="cd-n" id="cdS">0</div><div class="cd-l">Sec</div></div>
       </div>
       <div class="hero-dt">Awards: <strong>27 March 2026</strong></div>
     </div>
@@ -127,7 +127,7 @@
             <div class="qa-ic" style="background:#E8F5EE;color:#0B6B3A">
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
             </div>
-            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 2,000</strong></p></div>
+            <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 1,000</strong> Members<br/><strong>KES 2,000</strong> Non-Members</p></div>
             <a href="#nominate" class="btn btn-p btn-sm">Nominate Now</a>
           </div>
           <div class="qa-c">
@@ -159,7 +159,7 @@
               <div class="ff"><label>Location</label><input type="text" id="location" placeholder="e.g., Kapsabet"/></div>
             </div>
             <div class="fr">
-              <div class="ff"><label>KNCCI Status <span class="req">*</span></label><select id="membership" required><option value="">Select...</option><option value="non-member">Non-member (KES 2,000)</option></select><div class="ferr" data-e="membership"></div></div>
+              <div class="ff"><label>KNCCI Status <span class="req">*</span></label><select id="membership" required><option value="">Select...</option><option value="member">Member (KES 1,000)</option><option value="non-member">Non-member (KES 2,000)</option></select><div class="ferr" data-e="membership"></div></div>
               <div class="ff"><label>M-Pesa Code <span class="req">*</span></label><input type="text" id="mpesaRef" required placeholder="e.g., SLK4H7R2T1"/><div class="ferr" data-e="mpesaRef"></div></div>
             </div>
             <div class="ff"><label>Why should they win? <span class="req">*</span></label><textarea id="why" required placeholder="Performance, service, innovation..."></textarea><div class="ferr" data-e="why"></div></div>
@@ -172,7 +172,8 @@
             <h3>Pay First</h3>
             <div class="pd"><span class="pd-l">Paybill</span><span class="pd-v">303030</span></div>
             <div class="pd"><span class="pd-l">Account</span><span class="pd-v">2041058148</span></div>
-            <div class="pd"><span class="pd-l">Fee</span><span class="pd-v">KES 2,000</span></div>
+            <div class="pd"><span class="pd-l">Members</span><span class="pd-v">KES 1,000</span></div>
+            <div class="pd"><span class="pd-l">Non-Members</span><span class="pd-v">KES 2,000</span></div>
           </aside>
         </div>
       </div>
@@ -210,185 +211,197 @@
   <div class="toast" id="toast" hidden></div>
 
   <script>
-    (function() {
-      var GURL = 'https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
+    var GURL = 'https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
 
-      var CATS = [
-        {id:'electronic-shop',name:'Best Electronic Shop'},
-        {id:'salon',name:'Best Salon'},
-        {id:'beauty-shop',name:'Best Beauty Shop'},
-        {id:'baby-shop',name:'Best Baby Shop'},
-        {id:'fashion-shop',name:'Best Fashion Shop'},
-        {id:'kinyozi',name:'Best Kinyozi (Barbershop)'},
-        {id:'supermarket',name:'Best Supermarket'},
-        {id:'hotel-medium',name:'Best Hotel (Medium)'},
-        {id:'hotel-large',name:'Best Hotel (Large)'},
-        {id:'hardware',name:'Best Hardware'},
-        {id:'tea-factory',name:'Best Tea Factory'},
-        {id:'sacco',name:'Best SACCO'},
-        {id:'wholesale',name:'Best Wholesale'},
-        {id:'event-organizer',name:'Event Organizer of the Year'},
-        {id:'corporate-mc',name:'Corporate MC'},
-        {id:'private-school',name:'Private School of the Year'},
-        {id:'textile-tailor',name:'Best Textile/Tailor'},
-        {id:'carwash',name:'Carwash of the Year'},
-        {id:'garage',name:'Best Garage'},
-        {id:'private-hospital',name:'Best Private Hospital'},
-        {id:'chemist',name:'Best Chemist'},
-        {id:'agrovet',name:'Best Agrovet'},
-        {id:'petrol-station',name:'Best Petrol Station'},
-        {id:'bookshop',name:'Best Bookshop'},
-        {id:'cyber',name:'Best Cyber'},
-        {id:'cottage-industry',name:'Best Cottage Industry'},
-        {id:'national-polytechnic',name:'Best National Polytechnic'},
-        {id:'tvet-institution',name:'Best TVET Institution'},
-        {id:'bodaboda',name:'Best Bodaboda'},
-        {id:'mama-mboga',name:'Best Mama Mboga'},
-        {id:'workshop-furniture',name:'Best Workshop/Furniture Shop'},
-        {id:'photography-studio',name:'Best Photography/Studio'},
-        {id:'dairy-farmer',name:'Dairy Farmer'},
-        {id:'security-firm',name:'Best Security Firm'}
-      ];
+    var CATS = [
+      {id:'electronic-shop',name:'Best Electronic Shop'},
+      {id:'salon',name:'Best Salon'},
+      {id:'beauty-shop',name:'Best Beauty Shop'},
+      {id:'baby-shop',name:'Best Baby Shop'},
+      {id:'fashion-shop',name:'Best Fashion Shop'},
+      {id:'kinyozi',name:'Best Kinyozi (Barbershop)'},
+      {id:'supermarket',name:'Best Supermarket'},
+      {id:'hotel-medium',name:'Best Hotel (Medium)'},
+      {id:'hotel-large',name:'Best Hotel (Large)'},
+      {id:'hardware',name:'Best Hardware'},
+      {id:'tea-factory',name:'Best Tea Factory'},
+      {id:'sacco',name:'Best SACCO'},
+      {id:'wholesale',name:'Best Wholesale'},
+      {id:'event-organizer',name:'Event Organizer of the Year'},
+      {id:'corporate-mc',name:'Corporate MC'},
+      {id:'private-school',name:'Private School of the Year'},
+      {id:'textile-tailor',name:'Best Textile/Tailor'},
+      {id:'carwash',name:'Carwash of the Year'},
+      {id:'garage',name:'Best Garage'},
+      {id:'private-hospital',name:'Best Private Hospital'},
+      {id:'chemist',name:'Best Chemist'},
+      {id:'agrovet',name:'Best Agrovet'},
+      {id:'petrol-station',name:'Best Petrol Station'},
+      {id:'bookshop',name:'Best Bookshop'},
+      {id:'cyber',name:'Best Cyber'},
+      {id:'cottage-industry',name:'Best Cottage Industry'},
+      {id:'national-polytechnic',name:'Best National Polytechnic'},
+      {id:'tvet-institution',name:'Best TVET Institution'},
+      {id:'bodaboda',name:'Best Bodaboda'},
+      {id:'mama-mboga',name:'Best Mama Mboga'},
+      {id:'workshop-furniture',name:'Best Workshop/Furniture Shop'},
+      {id:'photography-studio',name:'Best Photography/Studio'},
+      {id:'dairy-farmer',name:'Dairy Farmer'},
+      {id:'security-firm',name:'Best Security Firm'}
+    ];
 
-      var toastEl = document.getElementById('toast');
-      var tt;
-      function toast(m) {
-        toastEl.textContent = m;
-        toastEl.hidden = false;
-        clearTimeout(tt);
-        tt = setTimeout(function() { toastEl.hidden = true; }, 2500);
-      }
+    // Toast
+    var toastEl = document.getElementById('toast');
+    var toastTimer;
+    function toast(msg) {
+      toastEl.textContent = msg;
+      toastEl.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function() { toastEl.hidden = true; }, 2500);
+    }
 
-      document.getElementById('copyBtn').addEventListener('click', function() {
-        navigator.clipboard.writeText('303030').then(function() {
-          toast('Paybill copied!');
-        });
+    // Copy paybill
+    document.getElementById('copyBtn').addEventListener('click', function() {
+      navigator.clipboard.writeText('303030').then(function() {
+        toast('Paybill copied!');
       });
+    });
 
-      var T = new Date('2026-03-27T18:00:00+03:00');
-      function pad(n) { return String(n).padStart(2, '0'); }
-      function tick() {
-        var d = Math.max(0, T - Date.now());
-        var t = Math.floor(d / 1000);
-        document.getElementById('cdD').textContent = Math.floor(t / 86400);
-        document.getElementById('cdH').textContent = pad(Math.floor((t % 86400) / 3600));
-        document.getElementById('cdM').textContent = pad(Math.floor((t % 3600) / 60));
-        document.getElementById('cdS').textContent = pad(t % 60);
+    // Countdown timer
+    var targetDate = new Date('2026-03-27T18:00:00+03:00');
+    function padZero(n) { return n < 10 ? '0' + n : n; }
+    function updateCountdown() {
+      var now = new Date();
+      var diff = Math.max(0, targetDate - now);
+      var seconds = Math.floor(diff / 1000);
+      var days = Math.floor(seconds / 86400);
+      var hours = Math.floor((seconds % 86400) / 3600);
+      var mins = Math.floor((seconds % 3600) / 60);
+      var secs = seconds % 60;
+      document.getElementById('cdD').textContent = days;
+      document.getElementById('cdH').textContent = padZero(hours);
+      document.getElementById('cdM').textContent = padZero(mins);
+      document.getElementById('cdS').textContent = padZero(secs);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Populate category dropdown
+    var catSelect = document.getElementById('category');
+    var catOptions = '<option value="">Select category...</option>';
+    for (var i = 0; i < CATS.length; i++) {
+      catOptions += '<option value="' + CATS[i].id + '">' + CATS[i].name + '</option>';
+    }
+    catSelect.innerHTML = catOptions;
+
+    // Render categories grid
+    function renderCategories(list) {
+      var html = '';
+      for (var i = 0; i < list.length; i++) {
+        var num = CATS.indexOf(list[i]) + 1;
+        html += '<div class="cc"><div class="cc-num">#' + num + '</div><div class="cc-n">' + list[i].name + '</div></div>';
       }
-      tick();
-      setInterval(tick, 1000);
+      document.getElementById('catGrid').innerHTML = html;
+    }
+    renderCategories(CATS);
 
-      var cSel = document.getElementById('category');
-      var opts = '<option value="">Select category...</option>';
+    // Search categories
+    document.getElementById('catSearch').addEventListener('input', function() {
+      var query = this.value.toLowerCase();
+      var filtered = [];
       for (var i = 0; i < CATS.length; i++) {
-        opts += '<option value="' + CATS[i].id + '">' + CATS[i].name + '</option>';
-      }
-      cSel.innerHTML = opts;
-
-      function renderCats(list) {
-        var html = '';
-        for (var i = 0; i < list.length; i++) {
-          var idx = CATS.indexOf(list[i]) + 1;
-          html += '<div class="cc"><div class="cc-num">#' + idx + '</div><div class="cc-n">' + list[i].name + '</div></div>';
+        if (!query || CATS[i].name.toLowerCase().indexOf(query) !== -1) {
+          filtered.push(CATS[i]);
         }
-        document.getElementById('catGrid').innerHTML = html;
       }
-      renderCats(CATS);
+      renderCategories(filtered);
+    });
 
-      document.getElementById('catSearch').addEventListener('input', function() {
-        var q = this.value.toLowerCase();
-        var filtered = [];
-        for (var i = 0; i < CATS.length; i++) {
-          if (!q || CATS[i].name.toLowerCase().indexOf(q) !== -1) {
-            filtered.push(CATS[i]);
-          }
+    // Phone validation
+    function isValidPhone(phone) {
+      return /^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(phone.replace(/\s/g, ''));
+    }
+
+    // Error handling
+    function showError(field, msg) {
+      var el = document.querySelector('[data-e="' + field + '"]');
+      if (el) el.textContent = msg || '';
+    }
+    function clearErrors() {
+      var fields = ['businessName','category','ownerName','phone','email','membership','mpesaRef','why'];
+      for (var i = 0; i < fields.length; i++) {
+        showError(fields[i], '');
+      }
+    }
+
+    // Form submit
+    document.getElementById('nomForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearErrors();
+
+      var businessName = document.getElementById('businessName').value.trim();
+      var category = document.getElementById('category').value;
+      var ownerName = document.getElementById('ownerName').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var location = document.getElementById('location').value.trim();
+      var membership = document.getElementById('membership').value;
+      var mpesaRef = document.getElementById('mpesaRef').value.trim();
+      var why = document.getElementById('why').value.trim();
+
+      var valid = true;
+      if (businessName.length < 2) { showError('businessName', 'Required'); valid = false; }
+      if (!category) { showError('category', 'Required'); valid = false; }
+      if (ownerName.length < 2) { showError('ownerName', 'Required'); valid = false; }
+      if (!isValidPhone(phone)) { showError('phone', 'Invalid phone'); valid = false; }
+      if (!membership) { showError('membership', 'Required'); valid = false; }
+      if (mpesaRef.length < 6) { showError('mpesaRef', 'Min 6 chars'); valid = false; }
+      if (why.length < 20) { showError('why', 'Min 20 chars'); valid = false; }
+      if (!valid) return;
+
+      var categoryName = '';
+      for (var i = 0; i < CATS.length; i++) {
+        if (CATS[i].id === category) {
+          categoryName = CATS[i].name;
+          break;
         }
-        renderCats(filtered);
+      }
+      var id = 'NBA-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+
+      var btn = document.getElementById('nomBtn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      var payload = {
+        action: 'nominate',
+        id: id,
+        businessName: businessName,
+        categoryName: categoryName,
+        membership: membership,
+        ownerName: ownerName,
+        phone: phone,
+        email: email,
+        location: location,
+        mpesaRef: mpesaRef,
+        why: why
+      };
+
+      fetch(GURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(payload)
+      }).then(function() {
+        document.getElementById('nomForm').reset();
+        catSelect.value = '';
+        clearErrors();
+        toast('Nomination submitted!');
+      }).catch(function() {
+        toast('Error - try again');
+      }).finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit Nomination';
       });
-
-      function vPhone(v) {
-        return /^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(v.replace(/\s/g, ''));
-      }
-
-      function setE(n, m) {
-        var e = document.querySelector('[data-e="' + n + '"]');
-        if (e) e.textContent = m || '';
-      }
-      function clrE() {
-        var fields = ['businessName','category','ownerName','phone','email','membership','mpesaRef','why'];
-        for (var i = 0; i < fields.length; i++) {
-          setE(fields[i], '');
-        }
-      }
-
-      document.getElementById('nomForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        clrE();
-
-        var businessName = document.getElementById('businessName').value.trim();
-        var category = document.getElementById('category').value;
-        var ownerName = document.getElementById('ownerName').value.trim();
-        var phone = document.getElementById('phone').value.trim();
-        var email = document.getElementById('email').value.trim();
-        var location = document.getElementById('location').value.trim();
-        var membership = document.getElementById('membership').value;
-        var mpesaRef = document.getElementById('mpesaRef').value.trim();
-        var why = document.getElementById('why').value.trim();
-
-        var ok = true;
-        if (businessName.length < 2) { setE('businessName', 'Required'); ok = false; }
-        if (!category) { setE('category', 'Required'); ok = false; }
-        if (ownerName.length < 2) { setE('ownerName', 'Required'); ok = false; }
-        if (!vPhone(phone)) { setE('phone', 'Invalid'); ok = false; }
-        if (!membership) { setE('membership', 'Required'); ok = false; }
-        if (mpesaRef.length < 6) { setE('mpesaRef', 'Min 6'); ok = false; }
-        if (why.length < 20) { setE('why', 'Min 20 chars'); ok = false; }
-        if (!ok) return;
-
-        var categoryName = '';
-        for (var i = 0; i < CATS.length; i++) {
-          if (CATS[i].id === category) {
-            categoryName = CATS[i].name;
-            break;
-          }
-        }
-        var id = 'NBA-' + Math.random().toString(36).slice(2, 8).toUpperCase();
-
-        var nomBtn = document.getElementById('nomBtn');
-        nomBtn.disabled = true;
-        nomBtn.textContent = 'Submitting...';
-
-        var payload = {
-          action: 'nominate',
-          id: id,
-          businessName: businessName,
-          categoryName: categoryName,
-          membership: membership,
-          ownerName: ownerName,
-          phone: phone,
-          email: email,
-          location: location,
-          mpesaRef: mpesaRef,
-          why: why
-        };
-
-        fetch(GURL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: JSON.stringify(payload)
-        }).then(function() {
-          document.getElementById('nomForm').reset();
-          cSel.value = '';
-          clrE();
-          toast('✓ Nomination submitted!');
-        }).catch(function() {
-          toast('Error - try again');
-        }).finally(function() {
-          nomBtn.disabled = false;
-          nomBtn.textContent = 'Submit Nomination';
-        });
-      });
-    })();
+    });
   </script>
 </body>
 </html>
