@@ -259,14 +259,12 @@
         tt = setTimeout(function() { toastEl.hidden = true; }, 2500);
       }
 
-      // Copy button
       document.getElementById('copyBtn').addEventListener('click', function() {
         navigator.clipboard.writeText('303030').then(function() {
           toast('Paybill copied!');
         });
       });
 
-      // Countdown timer
       var T = new Date('2026-03-27T18:00:00+03:00');
       function pad(n) { return String(n).padStart(2, '0'); }
       function tick() {
@@ -280,7 +278,6 @@
       tick();
       setInterval(tick, 1000);
 
-      // Populate category dropdown
       var cSel = document.getElementById('category');
       var opts = '<option value="">Select category...</option>';
       for (var i = 0; i < CATS.length; i++) {
@@ -288,7 +285,6 @@
       }
       cSel.innerHTML = opts;
 
-      // Render categories grid
       function renderCats(list) {
         var html = '';
         for (var i = 0; i < list.length; i++) {
@@ -299,7 +295,6 @@
       }
       renderCats(CATS);
 
-      // Filter categories
       document.getElementById('catSearch').addEventListener('input', function() {
         var q = this.value.toLowerCase();
         var filtered = [];
@@ -311,12 +306,10 @@
         renderCats(filtered);
       });
 
-      // Phone validation
       function vPhone(v) {
         return /^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(v.replace(/\s/g, ''));
       }
 
-      // Error display
       function setE(n, m) {
         var e = document.querySelector('[data-e="' + n + '"]');
         if (e) e.textContent = m || '';
@@ -328,57 +321,68 @@
         }
       }
 
-      // Form submission
       document.getElementById('nomForm').addEventListener('submit', function(e) {
         e.preventDefault();
         clrE();
 
-        var d = {
-          businessName: document.getElementById('businessName').value.trim(),
-          category: document.getElementById('category').value,
-          ownerName: document.getElementById('ownerName').value.trim(),
-          phone: document.getElementById('phone').value.trim(),
-          email: document.getElementById('email').value.trim(),
-          location: document.getElementById('location').value.trim(),
-          membership: document.getElementById('membership').value,
-          mpesaRef: document.getElementById('mpesaRef').value.trim(),
-          why: document.getElementById('why').value.trim()
-        };
+        var businessName = document.getElementById('businessName').value.trim();
+        var category = document.getElementById('category').value;
+        var ownerName = document.getElementById('ownerName').value.trim();
+        var phone = document.getElementById('phone').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var location = document.getElementById('location').value.trim();
+        var membership = document.getElementById('membership').value;
+        var mpesaRef = document.getElementById('mpesaRef').value.trim();
+        var why = document.getElementById('why').value.trim();
 
         var ok = true;
-        if (d.businessName.length < 2) { setE('businessName', 'Required'); ok = false; }
-        if (!d.category) { setE('category', 'Required'); ok = false; }
-        if (d.ownerName.length < 2) { setE('ownerName', 'Required'); ok = false; }
-        if (!vPhone(d.phone)) { setE('phone', 'Invalid'); ok = false; }
-        if (!d.membership) { setE('membership', 'Required'); ok = false; }
-        if (d.mpesaRef.length < 6) { setE('mpesaRef', 'Min 6'); ok = false; }
-        if (d.why.length < 20) { setE('why', 'Min 20 chars'); ok = false; }
+        if (businessName.length < 2) { setE('businessName', 'Required'); ok = false; }
+        if (!category) { setE('category', 'Required'); ok = false; }
+        if (ownerName.length < 2) { setE('ownerName', 'Required'); ok = false; }
+        if (!vPhone(phone)) { setE('phone', 'Invalid'); ok = false; }
+        if (!membership) { setE('membership', 'Required'); ok = false; }
+        if (mpesaRef.length < 6) { setE('mpesaRef', 'Min 6'); ok = false; }
+        if (why.length < 20) { setE('why', 'Min 20 chars'); ok = false; }
         if (!ok) return;
 
-        // Find category name
+        var categoryName = '';
         for (var i = 0; i < CATS.length; i++) {
-          if (CATS[i].id === d.category) {
-            d.categoryName = CATS[i].name;
+          if (CATS[i].id === category) {
+            categoryName = CATS[i].name;
             break;
           }
         }
-        d.id = 'NBA-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+        var id = 'NBA-' + Math.random().toString(36).slice(2, 8).toUpperCase();
 
         var nomBtn = document.getElementById('nomBtn');
         nomBtn.disabled = true;
         nomBtn.textContent = 'Submitting...';
 
+        var payload = {
+          action: 'nominate',
+          id: id,
+          businessName: businessName,
+          categoryName: categoryName,
+          membership: membership,
+          ownerName: ownerName,
+          phone: phone,
+          email: email,
+          location: location,
+          mpesaRef: mpesaRef,
+          why: why
+        };
+
         fetch(GURL, {
           method: 'POST',
           mode: 'no-cors',
-          body: JSON.stringify({ action: 'nominate', data: d })
+          body: JSON.stringify(payload)
         }).then(function() {
           document.getElementById('nomForm').reset();
           cSel.value = '';
           clrE();
-          toast('Nomination submitted!');
+          toast('✓ Nomination submitted!');
         }).catch(function() {
-          toast('Error submitting');
+          toast('Error - try again');
         }).finally(function() {
           nomBtn.disabled = false;
           nomBtn.textContent = 'Submit Nomination';
