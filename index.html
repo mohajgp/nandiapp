@@ -42,11 +42,11 @@
     .hero-dt{font-size:12px;opacity:.9}
 
     .qa{padding:0;margin-top:-24px;position:relative;z-index:10}
-    .qa-g{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .qa-g{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:600px;margin:0 auto}
     .qa-c{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
     .qa-ic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
     .qa-b h3{font-size:13px;margin-bottom:2px}.qa-b p{font-size:11px;color:var(--g700);line-height:1.3}
-    @media(max-width:700px){.qa-g{grid-template-columns:1fr}}
+    @media(max-width:500px){.qa-g{grid-template-columns:1fr}}
 
     .sec{padding:50px 0}.sec-a{background:var(--g100)}
     .sec-h{text-align:center;max-width:500px;margin:0 auto 28px}
@@ -70,33 +70,16 @@
     .pd{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(11,107,58,.12);font-size:12px}
     .pd:last-child{border:none}.pd-l{color:var(--g700)}.pd-v{font-weight:600}
 
-    .vpc{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:24px;text-align:center;max-width:360px;margin:0 auto}
-    .vpc h3{font-size:16px;margin-bottom:4px}.vpc p{font-size:12px;color:var(--g700);margin-bottom:12px}
-    .vpi{display:flex;gap:6px}.vpi input{flex:1;padding:8px 10px;border:1px solid var(--g300);border-radius:6px;font-size:13px}
-    .vinfo{background:var(--green-light);padding:8px 14px;border-radius:6px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
     .fb{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
-    .fi{flex:1;min-width:160px;padding:8px 10px;border:1px solid var(--g300);border-radius:6px;font-size:12px}
-    .chips{display:flex;gap:4px;flex-wrap:wrap}
-    .chip{padding:4px 10px;font-size:11px;font-weight:600;border-radius:50px;border:1px solid var(--g300);background:var(--white);color:var(--g700)}
-    .chip:hover{border-color:var(--green);color:var(--green)}.chip-a{background:var(--green);border-color:var(--green);color:var(--white)}
-    .ng{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-    .nc{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:14px}.nc:hover{border-color:var(--green)}
-    .nc-t{display:flex;justify-content:space-between;align-items:start;gap:6px;margin-bottom:3px}
-    .nc-n{font-weight:700;font-size:13px}
-    .nc-tg{font-size:8px;font-weight:600;text-transform:uppercase;padding:2px 6px;border-radius:50px;background:var(--green-light);color:var(--green)}
-    .nc-cat{font-size:11px;color:var(--g700);margin-bottom:8px}
-    .nc-v{font-size:10px;color:var(--green);font-weight:600}
-    .empty{text-align:center;padding:24px;color:var(--g500);font-size:12px}
+    .fi{flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--g300);border-radius:6px;font-size:12px}
 
-    .cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-    .cc{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:14px}.cc:hover{border-color:var(--green)}
-    .cc-t{display:flex;justify-content:space-between;align-items:start;gap:6px;margin-bottom:4px}
-    .cc-n{font-weight:700;font-size:13px}
-    .cc-tg{font-size:8px;font-weight:600;text-transform:uppercase;padding:2px 6px;border-radius:50px;background:var(--green-light);color:var(--green)}
-    .cc-d{font-size:11px;color:var(--g700);line-height:1.4}
+    .cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+    .cc{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:14px;transition:all .2s}.cc:hover{border-color:var(--green);box-shadow:0 2px 8px rgba(11,107,58,.1)}
+    .cc-n{font-weight:600;font-size:13px;color:var(--black)}
+    .cc-num{font-size:11px;color:var(--g500);margin-bottom:4px}
 
     .cog{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .coc{display:flex;align-items:center;gap:8px;padding:12px;background:var(--white);border:1px solid var(--g200);border-radius:8px;font-size:12px;font-weight:500}.coc:hover{border-color:var(--green)}
+    .coc{display:flex;align-items:center;gap:8px;padding:12px;background:var(--white);border:1px solid var(--g200);border-radius:8px;font-size:12px;font-weight:500;transition:all .2s}.coc:hover{border-color:var(--green)}
     @media(max-width:600px){.cog{grid-template-columns:1fr}}
 
     .ft{background:var(--green-dark);color:rgba(255,255,255,.8);padding:20px 0;font-size:12px}
@@ -116,7 +99,6 @@
       </a>
       <div class="nav-l">
         <a href="#nominate">Nominate</a>
-        <a href="#vote">Vote</a>
         <a href="#categories">Categories</a>
         <a href="#contact">Contact</a>
       </div>
@@ -145,17 +127,12 @@
           <div class="qa-c">
             <div class="qa-ic" style="background:#E8F5EE;color:#0B6B3A"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
             <div class="qa-b"><h3>Nomination Fee</h3><p><strong>KES 1,000</strong> Members<br/><strong>KES 2,000</strong> Non-Members</p></div>
-            <a href="#nominate" class="btn btn-p btn-sm">Nominate</a>
-          </div>
-          <div class="qa-c">
-            <div class="qa-ic" style="background:#FFF3E0;color:#E65100"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div class="qa-b"><h3>Vote Now</h3><p>Support your favourite<br/>Nandi businesses</p></div>
-            <a href="#vote" class="btn btn-p btn-sm">Vote</a>
+            <a href="#nominate" class="btn btn-p btn-sm">Nominate Now</a>
           </div>
           <div class="qa-c">
             <div class="qa-ic" style="background:#E3F2FD;color:#1565C0"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
-            <div class="qa-b"><h3>Payment</h3><p>Paybill: <strong>303030</strong><br/>Acc: <strong>2041058148</strong></p></div>
-            <button class="btn btn-g btn-sm" onclick="navigator.clipboard.writeText('303030').then(()=>toast('Copied!'))">Copy</button>
+            <div class="qa-b"><h3>Payment Details</h3><p>Paybill: <strong>303030</strong><br/>Acc: <strong>2041058148</strong></p></div>
+            <button class="btn btn-g btn-sm" onclick="navigator.clipboard.writeText('303030').then(()=>toast('Paybill copied!'))">Copy Paybill</button>
           </div>
         </div>
       </div>
@@ -163,7 +140,7 @@
 
     <section class="sec" id="nominate">
       <div class="ctr">
-        <div class="sec-h"><span class="sec-tag">Nominate</span><h2>Nominate a Business</h2><p>Pay first, then fill the form</p></div>
+        <div class="sec-h"><span class="sec-tag">Nominate</span><h2>Nominate a Business</h2><p>Pay first, then fill the form below</p></div>
         <div class="form-wrap">
           <form id="nomForm" class="frm" novalidate>
             <div class="fr">
@@ -184,7 +161,7 @@
             </div>
             <div class="ff"><label>Why should they win? <span class="req">*</span></label><textarea id="why" required placeholder="Performance, service, innovation..."></textarea><div class="ferr" data-e="why"></div></div>
             <div style="display:flex;gap:8px;margin-top:12px">
-              <button type="submit" class="btn btn-p" id="nomBtn">Submit</button>
+              <button type="submit" class="btn btn-p" id="nomBtn">Submit Nomination</button>
               <button type="reset" class="btn btn-g">Clear</button>
             </div>
           </form>
@@ -199,52 +176,17 @@
       </div>
     </section>
 
-    <section class="sec sec-a" id="vote">
+    <section class="sec sec-a" id="categories">
       <div class="ctr">
-        <div class="sec-h"><span class="sec-tag">Vote</span><h2>Vote for Your Favourite</h2><p>One vote per phone per category</p></div>
-        <div id="vPhoneStep">
-          <div class="vpc">
-            <h3>Enter phone to vote</h3>
-            <p>One vote per phone per category</p>
-            <div class="vpi"><input type="tel" id="voterPhone" placeholder="0712345678"/><button class="btn btn-p" id="voterBtn">Go</button></div>
-            <div class="ferr" id="vPhoneErr" style="text-align:center;margin-top:4px"></div>
-          </div>
-        </div>
-        <div id="vGridStep" hidden>
-          <div class="vinfo"><span>Voting as: <strong id="vDisplay"></strong></span><button class="btn btn-g btn-sm" id="changeVoter">Change</button></div>
-          <div class="fb">
-            <input type="search" id="voteSearch" class="fi" placeholder="Search..."/>
-            <div class="chips" id="voteChips">
-              <button class="chip chip-a" data-vf="all">All</button>
-              <button class="chip" data-vf="sme">SME</button>
-              <button class="chip" data-vf="sector">Sector</button>
-              <button class="chip" data-vf="impact">Impact</button>
-              <button class="chip" data-vf="special">Special</button>
-            </div>
-          </div>
-          <div class="ng" id="nomGrid"><div class="empty">Loading...</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec" id="categories">
-      <div class="ctr">
-        <div class="sec-h"><span class="sec-tag">Categories</span><h2>14 Award Categories</h2></div>
+        <div class="sec-h"><span class="sec-tag">Categories</span><h2>34 Award Categories</h2><p>Best businesses of 2025 in Nandi County</p></div>
         <div class="fb">
-          <input type="search" id="catSearch" class="fi" placeholder="Search..."/>
-          <div class="chips" id="catChips">
-            <button class="chip chip-a" data-f="all">All</button>
-            <button class="chip" data-f="sme">SME</button>
-            <button class="chip" data-f="sector">Sector</button>
-            <button class="chip" data-f="impact">Impact</button>
-            <button class="chip" data-f="special">Special</button>
-          </div>
+          <input type="search" id="catSearch" class="fi" placeholder="Search categories..."/>
         </div>
         <div class="cg" id="catGrid"></div>
       </div>
     </section>
 
-    <section class="sec sec-a" id="contact">
+    <section class="sec" id="contact">
       <div class="ctr">
         <div class="sec-h"><span class="sec-tag">Contact</span><h2>Get in Touch</h2></div>
         <div class="cog">
@@ -270,20 +212,40 @@
     const GURL='https://script.google.com/macros/s/AKfycbxQSDrK8yATZaH_xEZVLFI7UzC_H1rY9-TM0tQIMG0W-wPsahPZMyJ17QdsZctTVf9q/exec';
 
     const CATS=[
-      {id:'sme-excellence',name:'SME of the Year',tag:'sme',desc:'Outstanding SME performance and growth.'},
-      {id:'micro-excellence',name:'Micro Enterprise Award',tag:'sme',desc:'Best micro enterprise.'},
-      {id:'startup-innovation',name:'Startup & Innovation',tag:'impact',desc:'High-potential startup.'},
-      {id:'women-led',name:'Women-led Business',tag:'impact',desc:'Excellence in women-led enterprises.'},
-      {id:'youth-led',name:'Youth-led Business',tag:'impact',desc:'Youth-led enterprise excellence.'},
-      {id:'agribusiness',name:'Agribusiness Award',tag:'sector',desc:'Top farming/agriservices business.'},
-      {id:'manufacturing',name:'Manufacturing & Value Addition',tag:'sector',desc:'Quality production.'},
-      {id:'hospitality',name:'Hospitality & Tourism',tag:'sector',desc:'Best hotel/restaurant/tourism.'},
-      {id:'retail',name:'Retail & Trade',tag:'sector',desc:'Excellence in retail.'},
-      {id:'service',name:'Professional Services',tag:'sector',desc:'Outstanding services.'},
-      {id:'green',name:'Green Business Award',tag:'impact',desc:'Sustainable practices.'},
-      {id:'community',name:'Community Impact',tag:'impact',desc:'Outstanding community contribution.'},
-      {id:'customer',name:'Customer Service Excellence',tag:'special',desc:'Exceptional service.'},
-      {id:'lifetime',name:'Lifetime Achievement',tag:'special',desc:'Long-standing excellence.'}
+      {id:'electronic-shop',name:'Best Electronic Shop'},
+      {id:'salon',name:'Best Salon'},
+      {id:'beauty-shop',name:'Best Beauty Shop'},
+      {id:'baby-shop',name:'Best Baby Shop'},
+      {id:'fashion-shop',name:'Best Fashion Shop'},
+      {id:'kinyozi',name:'Best Kinyozi (Barbershop)'},
+      {id:'supermarket',name:'Best Supermarket'},
+      {id:'hotel-medium',name:'Best Hotel (Medium)'},
+      {id:'hotel-large',name:'Best Hotel (Large)'},
+      {id:'hardware',name:'Best Hardware'},
+      {id:'tea-factory',name:'Best Tea Factory'},
+      {id:'sacco',name:'Best SACCO'},
+      {id:'wholesale',name:'Best Wholesale'},
+      {id:'event-organizer',name:'Event Organizer of the Year'},
+      {id:'corporate-mc',name:'Corporate MC'},
+      {id:'private-school',name:'Private School of the Year'},
+      {id:'textile-tailor',name:'Best Textile/Tailor'},
+      {id:'carwash',name:'Carwash of the Year'},
+      {id:'garage',name:'Best Garage'},
+      {id:'private-hospital',name:'Best Private Hospital'},
+      {id:'chemist',name:'Best Chemist'},
+      {id:'agrovet',name:'Best Agrovet'},
+      {id:'petrol-station',name:'Best Petrol Station'},
+      {id:'bookshop',name:'Best Bookshop'},
+      {id:'cyber',name:'Best Cyber'},
+      {id:'cottage-industry',name:'Best Cottage Industry'},
+      {id:'national-polytechnic',name:'Best National Polytechnic'},
+      {id:'tvet-institution',name:'Best TVET Institution'},
+      {id:'bodaboda',name:'Best Bodaboda'},
+      {id:'mama-mboga',name:'Best Mama Mboga'},
+      {id:'workshop-furniture',name:'Best Workshop/Furniture Shop'},
+      {id:'photography-studio',name:'Best Photography/Studio'},
+      {id:'dairy-farmer',name:'Dairy Farmer'},
+      {id:'security-firm',name:'Best Security Firm'}
     ];
 
     const toastEl=$('#toast');let tt;
@@ -294,13 +256,18 @@
     tick();setInterval(tick,1000);
 
     const cSel=$('#category');
-    cSel.innerHTML='<option value="">Select...</option>'+CATS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
-    function renderCats(list){$('#catGrid').innerHTML=list.map(c=>`<div class="cc"><div class="cc-t"><div class="cc-n">${c.name}</div><div class="cc-tg">${c.tag}</div></div><div class="cc-d">${c.desc}</div></div>`).join('')}
+    cSel.innerHTML='<option value="">Select category...</option>'+CATS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+    
+    function renderCats(list){
+      $('#catGrid').innerHTML=list.map((c,i)=>`<div class="cc"><div class="cc-num">#${i+1}</div><div class="cc-n">${c.name}</div></div>`).join('');
+    }
     renderCats(CATS);
-    let cf='all';
-    function filterCats(){const q=$('#catSearch').value.toLowerCase();renderCats(CATS.filter(c=>(cf==='all'||c.tag===cf)&&(!q||c.name.toLowerCase().includes(q))))}
+    
+    function filterCats(){
+      const q=$('#catSearch').value.toLowerCase();
+      renderCats(CATS.filter(c=>!q||c.name.toLowerCase().includes(q)));
+    }
     $('#catSearch').addEventListener('input',filterCats);
-    $$('#catChips .chip').forEach(b=>b.addEventListener('click',()=>{$$('#catChips .chip').forEach(x=>x.classList.remove('chip-a'));b.classList.add('chip-a');cf=b.dataset.f;filterCats()}));
 
     const vPhone=v=>/^((\+?254)?(7|1)\d{8}|0(7|1)\d{8})$/.test(v.replace(/\s/g,''));
     function setE(n,m){const e=$(`[data-e="${n}"]`);if(e)e.textContent=m||''}
@@ -321,49 +288,10 @@
       const cat=CATS.find(c=>c.id===d.category);
       d.categoryName=cat?cat.name:d.category;
       d.id='NBA-'+Math.random().toString(36).slice(2,8).toUpperCase();
-      $('#nomBtn').disabled=true;$('#nomBtn').textContent='...';
-      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'nominate',...d})});$('#nomForm').reset();cSel.value='';clrE();toast('✓ Submitted!')}catch{toast('Error')}
-      $('#nomBtn').disabled=false;$('#nomBtn').textContent='Submit';
+      $('#nomBtn').disabled=true;$('#nomBtn').textContent='Submitting...';
+      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'nominate',...d})});$('#nomForm').reset();cSel.value='';clrE();toast('✓ Nomination submitted!')}catch{toast('Error submitting')}
+      $('#nomBtn').disabled=false;$('#nomBtn').textContent='Submit Nomination';
     });
-
-    let vPhone2='',noms=[];
-    const VK='nba_votes_v1';
-    function ldVotes(){try{return JSON.parse(localStorage.getItem(VK)||'{}')}catch{return{}}}
-    function svVote(ph,nid,cat){const v=ldVotes();v[`${ph}__${cat}`]=nid;localStorage.setItem(VK,JSON.stringify(v))}
-    function hasVoted(ph,cat){return!!ldVotes()[`${ph}__${cat}`]}
-
-    async function loadNoms(){
-      $('#nomGrid').innerHTML='<div class="empty">Loading...</div>';
-      try{const r=await fetch(GURL);noms=await r.json();if(!noms.length)$('#nomGrid').innerHTML='<div class="empty">No approved nominees yet.</div>'}
-      catch{$('#nomGrid').innerHTML='<div class="empty">Error loading.</div>'}
-    }
-
-    $('#voterBtn').addEventListener('click',async()=>{
-      const v=$('#voterPhone').value.trim();
-      if(!vPhone(v)){$('#vPhoneErr').textContent='Invalid';return}
-      vPhone2=v.replace(/\s/g,'');$('#vDisplay').textContent=vPhone2;
-      $('#vPhoneStep').hidden=true;$('#vGridStep').hidden=false;
-      await loadNoms();renderNoms();
-    });
-    $('#voterPhone').addEventListener('keydown',e=>{if(e.key==='Enter')$('#voterBtn').click()});
-    $('#changeVoter').addEventListener('click',()=>{vPhone2='';$('#vPhoneStep').hidden=false;$('#vGridStep').hidden=true;$('#voterPhone').value=''});
-
-    let vf='all';
-    function renderNoms(){
-      if(!noms.length)return;
-      const q=$('#voteSearch').value.toLowerCase();
-      const list=noms.filter(n=>(vf==='all'||n.tag===vf)&&(!q||n.name.toLowerCase().includes(q)||n.category.toLowerCase().includes(q)));
-      $('#nomGrid').innerHTML=list.length?list.map(n=>`<div class="nc"><div class="nc-t"><div class="nc-n">${n.name}</div><div class="nc-tg">${n.tag}</div></div><div class="nc-cat">${n.category}</div>${hasVoted(vPhone2,n.category)?'<div class="nc-v">✓ Voted</div>':`<button class="btn btn-p btn-sm" onclick="castVote('${n.id}','${n.category}')">Vote</button>`}</div>`).join(''):'<div class="empty">No matches</div>';
-    }
-
-    async function castVote(nid,cat){
-      if(hasVoted(vPhone2,cat)){toast('Already voted');return}
-      try{await fetch(GURL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'vote',phone:vPhone2,nomineeId:nid,category:cat})})}catch{}
-      svVote(vPhone2,nid,cat);toast('✓ Vote recorded!');renderNoms();
-    }
-
-    $('#voteSearch').addEventListener('input',renderNoms);
-    $$('#voteChips .chip').forEach(b=>b.addEventListener('click',()=>{$$('#voteChips .chip').forEach(x=>x.classList.remove('chip-a'));b.classList.add('chip-a');vf=b.dataset.vf;renderNoms()}));
   </script>
 </body>
 </html>
